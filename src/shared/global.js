@@ -1,5 +1,7 @@
-import { createGlobalStyle, css } from 'styled-components';
 import { color, typography } from './styles';
+import { createGlobalStyle, css } from 'styled-components';
+
+export const fontUrl = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap';
 
 export const bodyStyles = css`
   font-family: ${typography.type.primary};

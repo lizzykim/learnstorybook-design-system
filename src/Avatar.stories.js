@@ -1,10 +1,19 @@
-import React from "react";
-
 import { Avatar } from "./Avatar";
+import Liz from "../src/assets/Liz.png";
+import React from "react";
 
 export default {
   title: "Design System/Avatar",
   component: Avatar,
+
+  argTypes: {
+    size: {
+      control: {
+        type: "select",
+      },
+      options: ["tiny", "small", "medium", "large"],
+    },
+  },
 };
 
 export const Standard = (args) => <Avatar {...args} />;
@@ -33,20 +42,21 @@ export const Initials = (args) => (
     <Avatar username="Dominic Nguyen" />
     <Avatar username="Kyle Suss" />
     <Avatar username="Michael Shilman" />
+    <Avatar username="Da Young" />
   </div>
 );
 
 export const Loading = (args) => (
-    <div>
-      <Avatar {...args} size="large" />
-      <Avatar {...args} size="medium" />
-      <Avatar {...args} size="small" />
-      <Avatar {...args} size="tiny" />
-    </div>
-  );
-  Loading.args = {
-    loading: true,
-  };
+  <div>
+    <Avatar {...args} size="large" />
+    <Avatar {...args} size="medium" />
+    <Avatar {...args} size="small" />
+    <Avatar {...args} size="tiny" />
+  </div>
+);
+Loading.args = {
+  loading: true,
+};
 
 export const Large = (args) => (
   <div>
@@ -59,3 +69,14 @@ export const Large = (args) => (
     />
   </div>
 );
+
+const Templete = (args) => <Avatar {...args} />;
+
+export const Controls = Templete.bind({});
+
+Controls.args = {
+  loading: false,
+  size: "large",
+  username: "LIZ",
+  src: Liz,
+};
